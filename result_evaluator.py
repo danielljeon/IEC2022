@@ -36,7 +36,7 @@ def evaluate_csv(csv_file_path: str, hospital_range: int = 1000) -> int:
         previous_y = int(first_line[2])
 
         for line in reader:
-            # line = [index, x, y, village_or_resupply, patient_count].
+            # line = [index, x, y, village_or_resupply, patient_count]
 
             distance = euclidean_distance(int(previous_x), int(previous_y),
                                           int(line[1]), int(line[2]))
@@ -58,5 +58,6 @@ def evaluate_csv(csv_file_path: str, hospital_range: int = 1000) -> int:
         return patients_treated  # , total_traveled
 
 
-if __name__ == "__main__":
-    print(evaluate_csv("name.csv"))
+# if __name__ == "__main__":
+#     print(evaluate_csv("name.csv"))
+print(evaluate_csv("100+3.csv"))
