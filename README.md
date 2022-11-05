@@ -15,9 +15,6 @@
 
 - `case/requirements.txt` is specifically imports packages used
   in `case/test_case_generator.py`.
-# IEC  Senior Programming Competition
-
-Programming Challenge in order to determine the most optimal path in order to save as many patients as possible
 
 ## Problem
 The goal of this challenge is to determine the best route for a mobile hospital visiting villages in order to serve the most patients possible given a constrained travel distance. The challenge's second goal is to use a GUI to graphically depict the path.
