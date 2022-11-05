@@ -2,7 +2,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import math
 import os
-
+import csv
 # os.system('cls')
 df = pd.read_csv('100+3.csv')
 
@@ -19,6 +19,13 @@ def checkArr(shrList, id):
             return True
     return False
 
+
+def return_csv():
+    f = open('./result.csv', 'w')
+    writer = csv.writer(f)
+    for i in shrList:
+        writer.writerow(i)
+    
 
 def checkDups(shrList):
     seen = set()
@@ -84,7 +91,7 @@ while checkDups(shrList) == False and maxUnits > 0:
             startNode = supplyNode
             maxUnits = 1000
             print(f'Going to resupply!')
-        else:
+        elif maxUnits - shorDistance > 0:
             maxUnits -= shorDistance
             count +=1
             if startNode in dist:
@@ -94,9 +101,10 @@ while checkDups(shrList) == False and maxUnits > 0:
             startNode = nextNode
             print(
                 f"Distance: {shorDistance} MaxUnits: {maxUnits} Patient count: {patient_count}")
-    else:
-        print(f'DONE Patient count: {patient_count}')
-        break
+        else:
+            return_csv()
+            print(f'DONE Patient count: {patient_count}')
+            break
 
 # print("Starting node: " + str(0))
 # for j in shrList:
