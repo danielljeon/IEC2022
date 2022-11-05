@@ -1,0 +1,29 @@
+Report:
+
+1. Start at a random spot with full tank of gas
+
+2. Go to the nearest village/neighbor 
+
+3. Add the visited village to the visited list to rule it out from further searches
+
+1. Nearest algo is passed all the data, initial positon, max gas it can use, and current gas
+
+2. Checks has gas? Check closest village, and then go there, and subtract gas. 
+
+3. if not enough gas, goes to refuel point, set gas to max
+
+4. then goes to village --> Loop
+
+5. Everytime we visit a village, we add the village to a list that it cross references each time it has to visit another village. If the village has already been visited (ie. has been added to the 'visited' list) then the hospital does not go to that village and looks for another one that is unvisited.
+
+We read the csv file and we append the x and y coordinates to two arrays.
+One set for the village and the other for the resupply depots.
+
+We plot them as scatter
+
+Algo sends back optimized edge list of indexes
+Then we use those indexes to draw the connections between the nodes (plt.plot: Draws lines)
+
+What can we do better next time:
+One fault in our algo is that it doesn't visit all the villages because we get into a situation where we are stuck in a village without enough gas to get back to a resupply depot.
+So if we were to optimize or rewrite out algo, we need to find a way to evaluate whether going to a village will cause us to get stuck, and if it does, then we instead go get refueled first.

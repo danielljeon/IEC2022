@@ -1,0 +1,7 @@
+index,x,y,type,patient_count
+0,10,10,village,33
+1,20,20,village,87
+2,-10,5,village,30
+3,30,30,village,87
+4,-43,33,resupply,0
+5,53,-29,resupply,0
